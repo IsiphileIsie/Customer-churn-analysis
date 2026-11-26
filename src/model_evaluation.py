@@ -86,7 +86,9 @@ def generate_classification_report(y_test, y_pred):
     report = classification_report(
         y_test,
         y_pred,
-        output_dict=True
+        output_dict=True,
+        zero_division=0
+        
     )
 
     return report

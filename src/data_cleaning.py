@@ -52,6 +52,7 @@ def save_cleaned_data(df, output_path):
         df: Cleaned customer DataFrame.
         output_path: Destination path for the cleaned CSV file.
     """
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(output_path, index=False)
 
 

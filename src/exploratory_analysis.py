@@ -77,7 +77,7 @@ def plot_churn_rate(df, categorical_features):
     """
     for feature in categorical_features:
         churn_rates = (
-            df.groupby(feature)["Churn"]
+            df.groupby(feature, dropna=False)["Churn"]
             .apply(lambda x: (x == "Yes").mean() * 100)
             .sort_values(ascending=False)
         )
